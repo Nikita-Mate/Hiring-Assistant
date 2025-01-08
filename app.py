@@ -29,6 +29,8 @@ def main():
     with st.sidebar:
         st.image('image.png',output_format="PNG", width=100)
         st.title("PG-AGI")
+        
+        language = st.radio("Select Language:", ['English', 'Hindi', 'Arabic'])
         if st.button("End Chat"):
             # Extract candidate details and save
             if st.session_state.messages:
@@ -89,7 +91,6 @@ def main():
             st.session_state.current_step = "greeting"
             st.session_state.candidate_info = {}
             st.rerun()
-    language = st.radio("Select Language:", ['English', 'Hindi', 'Arabic'])
     template = """You are an AI hiring assistant for TalentScout, a tech recruitment agency. Guide the conversation based on the current step and maintain context.
 
     Steps:
