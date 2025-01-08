@@ -29,6 +29,8 @@ def main():
     with st.sidebar:
         st.image('image.png',output_format="PNG", width=100)
         st.title("PG-AGI")
+        
+        language = st.radio("Select Language:", ['English', 'Hindi', 'Arabic'])
         if st.button("End Chat"):
             # Extract candidate details and save
             if st.session_state.messages:
@@ -118,6 +120,7 @@ def main():
     2. "next_step": Next step to move to
     3. "store_info": Any new info to store about candidate (or empty dict)
 
+    Your response should be strictly in {language} language.
     Make sure your response should not contain any extra text/ characters/ empty space / new lines except Python dictionary which will start and end with curly braces.
     """
 
